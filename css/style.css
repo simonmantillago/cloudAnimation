@@ -77,7 +77,7 @@ img{
         transform: translateY(0%); 
     }
     100% {
-        transform: translateY(-115%); 
+        transform: translateY(-120%); 
     }
 }
 .gotas{
