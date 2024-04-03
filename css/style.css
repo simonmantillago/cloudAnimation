@@ -1,0 +1,51 @@
+body{
+    background-image: url(../img/FONDO.png);
+    background-repeat: none;
+    background-size: cover;
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+.anim{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+img{
+    width: 18rem;
+}
+
+.sun{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.plant{
+    position: absolute;
+    bottom: 10px;
+    left:350px
+}
+
+.nube{
+    align-self: flex-start;
+}
+
+@keyframes moveCloud {
+    0% {
+        transform: translateX(calc(100% + 10vw)); /* Mueve la nube fuera del lado derecho de la pantalla */
+    }
+    100% {
+        transform: translateX(calc(-100% - 30vw));
+    }
+}
+
+.nube img {
+    position: absolute;
+    animation: moveCloud 10s linear forwards ; 
+    z-index: 10;
+}
