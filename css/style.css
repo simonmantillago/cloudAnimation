@@ -5,6 +5,7 @@ body{
     margin: 0;
     padding: 0; 
     box-sizing: border-box;
+    overflow: hidden    ;
 }
 
 .anim{
@@ -21,31 +22,105 @@ img{
 
 .sun{
     position: absolute;
-    top: 10px;
+    top: 50px;
     right: 20px;
 }
 
 .plant{
     position: absolute;
-    bottom: 10px;
-    left:350px
+    bottom: -350px;
+    left:300px
 }
 
 .nube{
     align-self: flex-start;
+    position: absolute;
+    top: 40px;
 }
 
 @keyframes moveCloud {
     0% {
-        transform: translateX(calc(100% + 10vw)); /* Mueve la nube fuera del lado derecho de la pantalla */
+        transform: translateX(calc(100% + 10vw)); 
     }
+
+    40% {
+        transform: translateX(calc(-50%));
+    }
+    70% {
+        transform: translateX(calc(-50%)); 
+    } 
+    75%{
+        
+        
+    }  
+    
     100% {
-        transform: translateX(calc(-100% - 30vw));
+        transform: translateX(calc(-100% - 60vw));
     }
 }
 
+
 .nube img {
     position: absolute;
-    animation: moveCloud 10s linear forwards ; 
+    animation: moveCloud 10s linear forwards;
     z-index: 10;
+}
+
+.plant img {
+    position: absolute;
+    bottom: 0; 
+    left: 300px; 
+    animation: movePlant 10s linear 1 forwards; 
+}
+@keyframes movePlant {
+    50% {
+        transform: translateY(0%); 
+    }
+    100% {
+        transform: translateY(-115%); 
+    }
+}
+.gotas{
+    position: absolute;
+    z-index:9  ;
+    left: -60px;
+    top: -500px;
+}
+@keyframes moverain {
+    39%{
+        opacity: 0;
+    }
+    40% {
+        transform: translateY(0%); 
+        opacity: 100%;
+    }
+
+    70%{
+        
+    }
+    100% {
+        transform: translateY(115%); 
+        opacity: 0;
+    }
+}
+.gotas img{
+    opacity: 0;
+    animation: moverain 12s linear 1 forwards; 
+    height: 700vh;
+    
+}
+
+.mensaje{
+    color: red;
+    opacity: 0;
+    animation: txtShow 12s linear 1 forwards;
+}
+
+@keyframes txtShow {
+    90%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
